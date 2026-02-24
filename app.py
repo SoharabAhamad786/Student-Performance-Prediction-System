@@ -11,7 +11,7 @@ st.set_page_config(page_title="Student Predictor", page_icon="🎓", layout="wid
 
 # Check if the model exists
 if not os.path.exists(MODEL_PATH):
-    st.error("🚨 Model not found! Please run your training script first to generate 'student_model.pkl'.")
+    st.error("🚨 Model not found! Please run your training script first to generate 'student_model.pkl' inside the 'models' folder.")
 else:
     # Load the trained model
     model = joblib.load(MODEL_PATH)
@@ -109,4 +109,5 @@ else:
                         mime='text/csv',
                     )
                 except KeyError:
+
                     st.error("🚨 Error: Your CSV is missing required columns. Please check the column names.")
